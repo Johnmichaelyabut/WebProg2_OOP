@@ -22,8 +22,7 @@
 	/*
 	* Inserting datas
 	*/
-	$insert = new MessageDAO();
-		$insert->createMessage($_message, $_email, $_name);
+	$insert = MessageDAO::createMessage($_message, $_email, $_name);
 		if($insert){
 			echo "<script>alert('Message Sent!!');window.location.href='front.php'</script>";
 			

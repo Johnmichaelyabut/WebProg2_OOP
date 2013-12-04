@@ -4,8 +4,7 @@
 	* calling function in MessageDAO.php
 	*/
 	include "config.php";
-	$output = new MessageDAO();
-	$rows = $output->getAllMessages();
+	$rows = MessageDAO::getAllMessages();
 ?>
 <html>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">

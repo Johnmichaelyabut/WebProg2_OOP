@@ -13,7 +13,6 @@ class MessageDAO {
         // Execute SQL query to INSERT into messages table
         $sql = mysql_query("INSERT INTO message(name, email, message, date_posted, is_approved) VALUES('$_name', '$_email', '$_message', current_date, 'N')");
         return $sql;
-        // ... write your code 
     }
 
     /**
@@ -23,7 +22,7 @@ class MessageDAO {
     public static function getMessage($id) {
         // Execute SQL to fetch message based on ID
         $sql = mysql_query("SELECT * FROM message WHERE id = $id");
-        // ... write your code 
+        return $sql;
     }
 
     /**
@@ -40,7 +39,6 @@ class MessageDAO {
             }
         }
         return $array;
-        // ... write your code 
     }
 
     /**
@@ -50,7 +48,7 @@ class MessageDAO {
     public static function updateMessage($message, $name, $email) {
         // Execute SQL to update the message
         $sql = mysql_query("UPDATE message SET name = '$name', email = '$email', message = '$message', date_posted = current_date WHERE id = $id");
-        // ... write your code 
+        return $sql;
     }
 
     /**
@@ -62,7 +60,6 @@ class MessageDAO {
         $sql = "DELETE FROM message where id = {$id}";
         $result = mysql_query($sql);
         return $result;
-        // ... write your code 
     }
 
     /**
@@ -73,7 +70,7 @@ class MessageDAO {
     public static function approveMessage($id) {
          // Execute SQL to approving the message based on ID
         $sql = mysql_query("UPDATE message SET is_approved = 'Y' where id = $id");
-        // ... write your code 
+        return $sql;
     }
 
     /**
@@ -84,7 +81,7 @@ class MessageDAO {
     public static function rejectMessage($id) {
         // Execute SQL to rejecting the message based on ID
         $sql = mysql_query("UPDATE message SET is_approved = 'N' where id = {$id}");
-        // ... write your code 
+        return $sql;
     }
 }
 

@@ -4,9 +4,8 @@
 	* creating new object
 	*/
 	include "config.php";
-	$rec = new MessageDAO();
 	$id = $_GET['id']; 
-	$rec->deleteMessage($id);
+	MessageDAO::deleteMessage($id);
 	echo "<script>alert('Successfully Deleted!!');window.location.href='back.php';</script>";
  ?>
 
